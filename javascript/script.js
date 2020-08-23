@@ -75,6 +75,7 @@ content += `<th scope="col">First name </th>`;
 content += `<th scope="col">Last name </th>`;
 content += `<th scope="col">Age </th>`
 content += `<th scope="col">Created </th>`
+content += `<th scope="col">Active/Inactive</th>`
 content += `<th scope="col"></th>`;
 content += `<th scope="col"></th>`;
 content +=  '</tr>';
@@ -95,10 +96,11 @@ $('.container').append(content);
 
 function readFormData (){  
     let user = {};
+    let nr = Math.floor(Math.random() * Math.floor(2));
     user.firstName = document.getElementById('inputFirstName').value;
     user.lastName = document.getElementById('inputLastName').value;
     user.age = document.getElementById('ageInput').value;
-  
+    nr === 1 ? user.isActive = 'active' : user.isActive = 'inactive';
     return user;
 }
 
@@ -116,6 +118,7 @@ function updateTable(arr){
   row += `<td>${arr[i].lastName}</td>`;
   row += `<td>${arr[i].age}</td>`;
   row += `<td>${d.getDate()} / ${d.getMonth()} / ${d.getFullYear()}</td>`
+  row += `<td>${arr[i].isActive}</td>`;
   row += `<td><button onClick="onDelete(${i})" id="deleteBtn" class="btn btn-danger">Delete</button></td>`;
   row += `<td><button onClick="onEdit(${i})" id="deleteBtn" class="btn btn-primary">Edit</button></td>`;
   row += '</tr>';
