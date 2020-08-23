@@ -1,0 +1,17 @@
+body {
+    padding: 100px;
+}
+
+.input-group-prepend {
+    padding-left: 70px;
+    margin-right: 0px;
+}
+
+.budget-text {
+    margin-top: 6px;
+    margin-right: 15px;
+}
+
+.description {
+    margin-top: 139px;
+}
